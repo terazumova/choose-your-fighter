@@ -1,0 +1,34 @@
+<form [formGroup]="searchForm" class="search-form">
+  <div class="search-form__input-group">
+    <label class="search-form__text" for="name">
+      Name:
+    </label>
+    <input class="search-form__input" type="text" id="name" formControlName="nameCtrl">
+  </div>
+  <p class="advanced-search__title" (click)="toggleAdvancedSearch()">
+    <mat-icon *ngIf="!toggle">keyboard_arrow_right</mat-icon>
+    <mat-icon *ngIf="toggle">keyboard_arrow_down</mat-icon>
+    Advanced search
+  </p>
+  <div class="advanced-search" *ngIf="toggle">
+    <div class="search-form__input-group">
+      <label class="search-form__text" for="main-series">
+        Main Series:
+      </label>
+      <input class="search-form__checkbox" type="checkbox" id="main-series" formControlName="mainSeriesCtrl">
+    </div>
+    <div class="search-form__input-group">
+      <label class="search-form__text" for="experience">
+        Base Experience:
+      </label>
+      <input class="search-form__input" type="text" id="experience" formControlName="experienceCtrl">
+    </div>
+    <div class="search-form__input-group">
+      <label class="search-form__text" for="types">
+        Types:
+      </label>
+      <input class="search-form__input" type="text" id="types" formControlName="typesCtrl">
+    </div>
+  </div>
+  <button class="search-form__button" type="submit">Find</button>
+</form>
